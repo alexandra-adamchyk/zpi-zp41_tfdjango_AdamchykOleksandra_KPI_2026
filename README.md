@@ -133,6 +133,48 @@ Admin panel
 http://127.0.0.1:8000/admin/
 
 ---
+---
+
+# Part 2 — Image Recognition (Django + TensorFlow)
+
+The second part of the project extends the Django application with an image recognition system.
+
+A new Django application **vision** was created.  
+It allows users to upload an image and detect the main object using a neural network.
+
+The recognition is implemented using **TensorFlow / Keras MobileNetV2 pretrained on ImageNet**.
+
+## Features
+
+- upload JPG or PNG images
+- neural network inference using MobileNetV2
+- automatic image preprocessing
+- grouping of detailed ImageNet classes into simple categories (Cat, Dog, Bird, etc.)
+- confidence score for the detected object
+- SHA256 caching for repeated images
+- modern Bootstrap interface
+
+## How it works
+
+1. The user uploads an image.
+2. The image is resized to **224x224** pixels.
+3. The neural network predicts the top ImageNet classes.
+4. Similar classes are grouped into simple categories.
+5. The system displays the detected object and confidence score.
+
+## Screenshots
+
+### Upload Page
+
+![Vision Upload](images/vision-upload.png)
+
+### Example Result 1
+
+![Vision Result 1](images/vision-result-1.png)
+
+### Example Result 2
+
+![Vision Result 2](images/vision-result-2.png)
 
 ## Author
 
