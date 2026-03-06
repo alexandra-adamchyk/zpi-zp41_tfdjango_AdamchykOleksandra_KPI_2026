@@ -64,21 +64,29 @@ The project is based on the official Django tutorial and extended with a modern 
 
 ## Project Structure
 
-mysite/
-polls/
-├── static/polls/style.css
-├── templates/polls/
-│   ├── index.html
-│   ├── detail.html
-│   └── results.html
-├── models.py
-├── views.py
-├── urls.py
-└── admin.py
+The project contains two main parts.
 
-images/
-manage.py
-README.md
+The **mysite** directory contains the main Django configuration files.
+
+The **polls** application contains the core functionality of the project, including:
+
+- models describing poll questions and answer choices
+- views handling user interaction
+- URL routing
+- templates used to render pages
+- static files for styling
+
+Templates are located in:
+
+templates/polls/
+
+Static styles are located in:
+
+static/polls/style.css
+
+Screenshots used in the documentation are stored in the **images** directory.
+
+The file **manage.py** is used to run Django management commands.
 
 ---
 
@@ -86,25 +94,35 @@ README.md
 
 Clone the repository
 
+```bash
 git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
 cd YOUR_REPOSITORY
+```
 
 Create virtual environment
 
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
 Install dependencies
 
+```bash
 pip install django
+```
 
 Apply migrations
 
+```bash
 python manage.py migrate
+```
 
 Run server
 
+```bash
 python manage.py runserver
+```
 
 Open in browser
 
