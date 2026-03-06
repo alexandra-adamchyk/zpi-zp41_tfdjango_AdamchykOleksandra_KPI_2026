@@ -52,3 +52,7 @@ body.app-bg {
     font-weight: 600;
     font-size: 0.9rem;
 }
+
+.prediction-bar {
+    width: var(--bar-width);
+}
