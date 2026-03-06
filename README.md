@@ -175,7 +175,3 @@ The recognition is implemented using **TensorFlow / Keras MobileNetV2 pretrained
 ### Example Result 2
 
 ![Vision Result 2](images/vision-result-2.png)
-
-## Author
-
-Oleksandra Adamchyk
