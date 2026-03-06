@@ -1,12 +1,35 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'polls/style.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polls</title>
+    <link rel="stylesheet" href="{% static 'polls/style.css' %}?v=2">
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <h1>Polls Application</h1>
+            <p>Choose a question and vote.</p>
+        </header>
 
-{% if latest_question_list %}
-  <ul>
-    {% for question in latest_question_list %}
-      <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
-    {% endfor %}
-  </ul>
-{% else %}
-  <p>No polls are available.</p>
-{% endif %}
+        <main class="container">
+            {% if latest_question_list %}
+                <div class="cards">
+                    {% for question in latest_question_list %}
+                        <a class="card" href="{% url 'polls:detail' question.id %}">
+                            <h2>{{ question.question_text }}</h2>
+                            <span class="card-link">Open poll →</span>
+                        </a>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="empty-state">
+                    <p>No polls are available.</p>
+                </div>
+            {% endif %}
+        </main>
+    </div>
+</body>
+</html>
